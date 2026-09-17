@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>교재 등록 - 캠퍼스 중고교재</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="my.css">
+</head>
+<body>
+  <div class="page-wrap">
+
+    <!-- 모든 페이지에 같은 메뉴를 넣어서 이동이 쉽게 합니다 -->
+    <nav class="navbar navbar-expand-md navbar-dark my-navbar">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">캠퍼스 중고교재</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainMenu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">목록</a></li>
+            <li class="nav-item"><a class="nav-link active" href="add.html">등록</a></li>
+            <li class="nav-item"><a class="nav-link" href="example.html">Bootstrap 예제</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main class="page-main">
+      <div class="container content-box">
+        <div class="page-header">
+          <h1 class="page-title">교재 등록</h1>
+          <p class="page-desc">새로운 중고교재를 등록하는 페이지입니다. <span class="required-mark">*</span> 표시는 필수 입력입니다.</p>
+        </div>
+
+        <!--
+          onsubmit="return checkAddForm();"
+          제출 버튼을 누르면 checkAddForm()을 실행합니다.
+          함수가 false를 돌려주면 다음 단계로 가지 않습니다.
+        -->
+        <form class="my-form my-card" id="addForm" onsubmit="return checkAddForm();">
+          <div class="row">
+            <!-- 1. 교재명 (텍스트) -->
+            <div class="col-md-6 mb-3">
+              <label class="form-label" for="bookTitle">교재명 <span class="required-mark">*</span></label>
+              <input class="form-control" type="text" id="bookTitle" name="bookTitle" placeholder="예: 혼자 공부하는 자바">
+              <div class="help-text">2자 이상 50자 이하</div>
+            </div>
+
+            <!-- 2. 저자 (텍스트) -->
+            <div class="col-md-6 mb-3">
+              <label class="form-label" for="author">저자 <span class="required-mark">*</span></label>
+              <input class="form-control" type="text" id="author" name="author" placeholder="예: 신용권">
+            </div>
+
+            <!-- 3. 과목명 (텍스트) -->
+            <div class="col-md-6 mb-3">
+              <label class="form-label" for="course">과목명 <span class="required-mark">*</span></label>
+              <input class="form-control" type="text" id="course" name="course" placeholder="예: 객체지향프로그래밍">
+            </div>
+
+            <!-- 4. 가격 (숫자) -->
+            <div class="col-md-6 mb-3">
+              <label class="form-label" for="price">가격(원) <span class="required-mark">*</span></label>
+              <input class="form-control" type="number" id="price" name="price" placeholder="예: 18000">
+              <div class="help-text">1,000원 ~ 200,000원</div>
+            </div>
+
+            <!-- 5. 책 상태 (선택 상자) -->
+            <div class="col-md-6 mb-3">
+              <label class="form-label" for="bookCondition">책 상태 <span class="required-mark">*</span></label>
+              <select class="form-select" id="bookCondition" name="bookCondition">
+                <option value="">선택하세요</option>
+                <option value="최상">최상</option>
+                <option value="상">상</option>
+                <option value="중">중</option>
+                <option value="하">하</option>
+              </select>
+            </div>
+
+            <!-- 6. 판매 상태 (선택 상자) -->
+            <div class="col-md-6 mb-3">
+              <label class="form-label" for="saleStatus">판매 상태 <span class="required-mark">*</span></label>
+              <select class="form-select" id="saleStatus" name="saleStatus">
+                <option value="">선택하세요</option>
+                <option value="판매중">판매중</option>
+                <option value="예약중">예약중</option>
+                <option value="판매완료">판매완료</option>
+              </select>
+            </div>
+
+            <!-- 7. 이메일 -->
+            <div class="col-md-6 mb-3">
+              <label class="form-label" for="email">판매자 이메일 <span class="required-mark">*</span></label>
+              <input class="form-control" type="text" id="email" name="email" placeholder="예: student@handong.edu">
+            </div>
+
+            <!-- 8. 등록일 (날짜) -->
+            <div class="col-md-6 mb-3">
+              <label class="form-label" for="regDate">등록일 <span class="required-mark">*</span></label>
+              <input class="form-control" type="date" id="regDate" name="regDate">
+            </div>
+          </div>
+
+          <div class="btn-wrap">
+            <button type="submit" class="btn btn-main">추가</button>
+            <a href="index.html" class="btn btn-outline-secondary">목록으로</a>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <footer class="my-footer">
+      <div class="container">
+        캠퍼스 중고교재 · 21901037 이준형 · <a href="index.html">Home</a>
+      </div>
+    </footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- 입력값 검사: js/check.js 의 checkAddForm() 을 사용합니다 -->
+  <script src="js/check.js"></script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>교재 상세보기 - 캠퍼스 중고교재</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="my.css">
+</head>
+<body>
+  <div class="page-wrap">
+
+    <nav class="navbar navbar-expand-md navbar-dark my-navbar">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">캠퍼스 중고교재</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainMenu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">목록</a></li>
+            <li class="nav-item"><a class="nav-link" href="add.html">등록</a></li>
+            <li class="nav-item"><a class="nav-link" href="example.html">Bootstrap 예제</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main class="page-main">
+      <div class="container content-box">
+        <div class="page-header">
+          <h1 class="page-title">교재 상세보기</h1>
+          <p class="page-desc">목록에서 선택한 1번 교재의 모든 정보를 보여줍니다.</p>
+        </div>
+
+        <!-- 샘플 1건의 모든 Field를 표시합니다 -->
+        <div class="my-card">
+          <div class="view-row">
+            <div class="view-label">번호</div>
+            <div class="view-value">1</div>
+          </div>
+          <div class="view-row">
+            <div class="view-label">교재명</div>
+            <div class="view-value">혼자 공부하는 자바</div>
+          </div>
+          <div class="view-row">
+            <div class="view-label">저자</div>
+            <div class="view-value">신용권</div>
+          </div>
+          <div class="view-row">
+            <div class="view-label">과목명</div>
+            <div class="view-value">객체지향프로그래밍</div>
+          </div>
+          <div class="view-row">
+            <div class="view-label">가격</div>
+            <div class="view-value">18,000원</div>
+          </div>
+          <div class="view-row">
+            <div class="view-label">책 상태</div>
+            <div class="view-value">상</div>
+          </div>
+          <div class="view-row">
+            <div class="view-label">판매 상태</div>
+            <div class="view-value"><span class="badge badge-sale">판매중</span></div>
+          </div>
+          <div class="view-row">
+            <div class="view-label">판매자 이메일</div>
+            <div class="view-value">junhyung@handong.edu</div>
+          </div>
+          <div class="view-row">
+            <div class="view-label">등록일</div>
+            <div class="view-value">2026-09-10</div>
+          </div>
+
+          <!-- Edit / Delete / 목록 버튼 -->
+          <div class="btn-wrap">
+            <a href="edit.html" class="btn btn-edit">수정</a>
+            <button type="button" class="btn btn-delete" onclick="checkDelete();">삭제</button>
+            <a href="index.html" class="btn btn-outline-secondary">목록으로</a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="my-footer">
+      <div class="container">
+        캠퍼스 중고교재 · 21901037 이준형 · <a href="index.html">Home</a>
+      </div>
+    </footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // 삭제 버튼을 누르면 확인 창을 띄웁니다.
+    function checkDelete() {
+      var ok = confirm("이 게시물을 삭제할까요?");
+      if (ok) {
+        alert("삭제되었습니다. 목록 페이지로 이동합니다.");
+        location.href = "index.html";
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,283 @@
+/* =========================================================
+   my.css
+   모든 페이지(index, add, view, edit, example)에서 같이 쓰는 스타일
+   HTML 안에는 디자인 코드를 거의 넣지 않고, 이 파일을 연결해서 사용합니다.
+   ========================================================= */
+
+/* ---------- 페이지 전체 레이아웃 ---------- */
+html, body {
+  height: 100%;
+}
+
+body {
+  /* 본문 글꼴, 배경색, 글자색 */
+  font-family: "Malgun Gothic", "맑은 고딕", Arial, sans-serif;
+  background-color: #f4f7f5;
+  color: #1b4332;
+  margin: 0;
+}
+
+/* 푸터를 화면 아래에 붙이기 위한 기본 구조 */
+.page-wrap {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-main {
+  flex: 1; /* 남은 공간을 본문이 차지합니다 */
+}
+
+/* ---------- Header / Navigation ---------- */
+.my-navbar {
+  background-color: #1b4332; /* 캠퍼스 느낌의 진한 초록 */
+}
+
+.my-navbar .navbar-brand {
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+.my-navbar .nav-link {
+  color: #d8f3dc;
+}
+
+.my-navbar .nav-link:hover,
+.my-navbar .nav-link.active {
+  color: #ffffff;
+}
+
+.page-header {
+  padding: 28px 0 12px;
+}
+
+.page-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.page-desc {
+  color: #52796f;
+  margin-bottom: 16px;
+}
+
+/* ---------- Header / Footer ---------- */
+.my-footer {
+  background-color: #1b4332;
+  color: #d8f3dc;
+  padding: 18px 0;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.my-footer a {
+  color: #b7e4c7;
+  text-decoration: none;
+}
+
+.my-footer a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Card ---------- */
+.my-card {
+  background-color: #ffffff;
+  border: 1px solid #d8e3dc;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(27, 67, 50, 0.08);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.my-card h2,
+.my-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+}
+
+/* ---------- Table / List ---------- */
+.my-table {
+  background-color: #ffffff;
+}
+
+.my-table thead th {
+  background-color: #1b4332;
+  color: #ffffff;
+  white-space: nowrap; /* 제목이 두 줄로 깨지지 않게 */
+}
+
+.my-table a {
+  color: #1b4332;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.my-table a:hover {
+  color: #2d6a4f;
+  text-decoration: underline;
+}
+
+.badge-sale {
+  background-color: #2d6a4f;
+}
+
+.badge-reserve {
+  background-color: #bc6c25;
+}
+
+.badge-done {
+  background-color: #6c757d;
+}
+
+/* ---------- Form / Input / Select ---------- */
+.my-form .form-label {
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.my-form .form-control,
+.my-form .form-select {
+  border: 1px solid #b7c7be;
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+
+.my-form .form-control:focus,
+.my-form .form-select:focus {
+  border-color: #2d6a4f;
+  box-shadow: 0 0 0 0.2rem rgba(45, 106, 79, 0.15);
+}
+
+.required-mark {
+  color: #d00000; /* 필수 항목 * 표시 */
+  font-weight: bold;
+}
+
+.help-text {
+  font-size: 0.85rem;
+  color: #6c757d;
+}
+
+/* ---------- Button ---------- */
+.btn-main {
+  background-color: #2d6a4f;
+  border-color: #2d6a4f;
+  color: #ffffff;
+}
+
+.btn-main:hover {
+  background-color: #1b4332;
+  border-color: #1b4332;
+  color: #ffffff;
+}
+
+.btn-edit {
+  background-color: #40916c;
+  border-color: #40916c;
+  color: #ffffff;
+}
+
+.btn-edit:hover {
+  background-color: #2d6a4f;
+  color: #ffffff;
+}
+
+.btn-delete {
+  background-color: #bc4749;
+  border-color: #bc4749;
+  color: #ffffff;
+}
+
+.btn-delete:hover {
+  background-color: #9b2226;
+  color: #ffffff;
+}
+
+.btn-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px; /* 버튼 사이 간격 */
+  margin-top: 16px;
+}
+
+/* 상세보기 한 줄씩 보여주기 */
+.view-row {
+  display: flex;
+  border-bottom: 1px solid #e6eee9;
+  padding: 10px 0;
+}
+
+.view-label {
+  width: 140px;
+  font-weight: 700;
+  color: #52796f;
+  flex-shrink: 0;
+}
+
+.view-value {
+  flex: 1;
+}
+
+/* =========================================================
+   Responsive Web Design (미디어 쿼리)
+   화면 너비에 따라 레이아웃을 바꿉니다.
+   768px 기준: 휴대폰 / 데스크톱
+   ========================================================= */
+
+/* 휴대폰 (가로 767px 이하) */
+@media (max-width: 767px) {
+  .page-title {
+    font-size: 1.4rem;
+  }
+
+  .page-header {
+    padding-top: 18px;
+  }
+
+  .my-card {
+    padding: 16px;
+  }
+
+  /* 표 글자를 조금 줄여서 화면에 맞춤 */
+  .my-table {
+    font-size: 0.9rem;
+  }
+
+  /* 상세보기는 라벨/값을 위아래로 배치 */
+  .view-row {
+    flex-direction: column;
+  }
+
+  .view-label {
+    width: 100%;
+    margin-bottom: 4px;
+  }
+
+  .btn-wrap .btn {
+    width: 100%; /* 휴대폰에서는 버튼을 세로로 크게 */
+  }
+
+  .my-form .form-control,
+  .my-form .form-select {
+    width: 100%;
+  }
+}
+
+/* 데스크톱 (가로 768px 이상) */
+@media (min-width: 768px) {
+  .page-title {
+    font-size: 2rem;
+  }
+
+  .content-box {
+    max-width: 960px;
+  }
+}
+
+/* example.html (Bootstrap Album) 은 공식 예제 색을 유지합니다 */
+body.album-page {
+  background-color: #fff;
+  color: #212529;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}

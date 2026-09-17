@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <!-- 한글이 깨지지 않도록 UTF-8로 저장합니다 -->
+  <meta charset="UTF-8">
+  <!-- 휴대폰 화면에서도 크기가 맞게 보이도록 viewport를 넣습니다 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>중고교재 목록 - 캠퍼스 중고교재</title>
+
+  <!-- Bootstrap CSS (버튼, 표, 메뉴, 그리드를 쉽게 쓰기 위해 CDN으로 불러옵니다) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- 우리 과제 공통 디자인 -->
+  <link rel="stylesheet" href="my.css">
+</head>
+<body>
+  <div class="page-wrap">
+
+    <!-- ========== 위쪽 메뉴 (Navigation) ========== -->
+    <nav class="navbar navbar-expand-md navbar-dark my-navbar">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">캠퍼스 중고교재</a>
+
+        <!-- 휴대폰에서는 이 버튼으로 메뉴를 열고 닫습니다 -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainMenu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link active" href="index.html">목록</a></li>
+            <li class="nav-item"><a class="nav-link" href="add.html">등록</a></li>
+            <li class="nav-item"><a class="nav-link" href="example.html">Bootstrap 예제</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ========== 본문: 목록 페이지 ========== -->
+    <main class="page-main">
+      <div class="container content-box">
+        <div class="page-header d-flex flex-wrap justify-content-between align-items-center">
+          <div>
+            <h1 class="page-title">중고교재 목록</h1>
+            <p class="page-desc">캠퍼스에서 사고 파는 전공 교재 게시판입니다. 교재명을 누르면 상세 페이지로 이동합니다.</p>
+          </div>
+          <!-- Add 버튼: add.html로 이동합니다 -->
+          <a href="add.html" class="btn btn-main mb-3">+ 교재 등록</a>
+        </div>
+
+        <!-- table-responsive: 휴대폰에서 표가 화면 밖으로 안 나가고 좌우 스크롤됩니다 -->
+        <div class="table-responsive my-card p-0">
+          <table class="table table-hover my-table mb-0">
+            <thead>
+              <tr>
+                <th>번호</th>
+                <th>교재명</th>
+                <th>과목명</th>
+                <th>가격</th>
+                <th>판매상태</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- 샘플 데이터입니다. 실제 서버/DB는 아직 연결하지 않습니다. -->
+              <tr>
+                <td>1</td>
+                <td><a href="view.html">혼자 공부하는 자바</a></td>
+                <td>객체지향프로그래밍</td>
+                <td>18,000원</td>
+                <td><span class="badge badge-sale">판매중</span></td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td><a href="view.html">데이터베이스 개론</a></td>
+                <td>데이터베이스</td>
+                <td>15,000원</td>
+                <td><span class="badge badge-sale">판매중</span></td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td><a href="view.html">컴퓨터 네트워크</a></td>
+                <td>컴퓨터네트워크</td>
+                <td>22,000원</td>
+                <td><span class="badge badge-reserve">예약중</span></td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td><a href="view.html">HTML+CSS+자바스크립트</a></td>
+                <td>웹프로그래밍</td>
+                <td>12,000원</td>
+                <td><span class="badge badge-done">판매완료</span></td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td><a href="view.html">운영체제</a></td>
+                <td>운영체제</td>
+                <td>25,000원</td>
+                <td><span class="badge badge-sale">판매중</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="help-text">지금은 프론트엔드만 만들기 때문에, 어떤 교재명을 눌러도 같은 상세 페이지(1번 데이터)가 열립니다.</p>
+      </div>
+    </main>
+
+    <!-- ========== Footer ========== -->
+    <footer class="my-footer">
+      <div class="container">
+        캠퍼스 중고교재 · 21901037 이준형 · <a href="index.html">Home</a>
+      </div>
+    </footer>
+  </div>
+
+  <!-- 메뉴 접기/펼치기 같은 Bootstrap 동작을 위해 JS도 불러옵니다 -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
